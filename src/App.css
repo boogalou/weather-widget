@@ -1,0 +1,11 @@
+.App {
+  margin-top: 50px;
+}
+
+.widget {
+  max-width: 600px;
+  margin: 0 auto;
+  background-size: cover;
+  background-image: url(https://sowegalive.com/wp-content/uploads/2015/03/rain_BG_WEB-600x315-cropped.jpg);
+  border-radius: 8px;
+}
