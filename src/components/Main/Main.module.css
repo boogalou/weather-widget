@@ -1,0 +1,14 @@
+.main {
+    display: flex;
+    align-items: center
+}
+
+.main-temp__temp {
+    font-size: 3em;
+    font-weight: 500;
+}
+
+.main-summary {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.746);
+}

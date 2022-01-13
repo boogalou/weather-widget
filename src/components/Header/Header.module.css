@@ -1,0 +1,28 @@
+.header__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-location {
+    display: flex;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.header__subtitle {
+    display: flex;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.746);
+}
+
+
+.title-setup__icon-gear {
+    width: 25px;
+    height: 25px;
+}
+
+.icon-gear__img {
+    width: 100%;
+    height: auto;
+}

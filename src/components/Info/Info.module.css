@@ -1,0 +1,38 @@
+.info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 25px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.746);
+}
+
+.info__window,
+.window__direction,
+.info__humidity,
+.info__pressure {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.window-icon__img,
+.icon-se,
+.humidity-icon__img,
+.pressure-icon__img {
+    width: 100%;
+    height: auto;
+}
+
+.window-icon,
+.direction__icon,
+.humidity-icon,
+.pressure-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.border {
+    border: 1px solid rgba(255, 255, 255, 0.198);
+    margin-bottom: 10px;
+}

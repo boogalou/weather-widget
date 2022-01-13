@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ICurrentWeather } from '../type/ICurrentWeather';
+import { IWeatherResponse } from '../type/ICurrentWeather';
 
 
 export interface ICurrentWeatherState {
-  weatherData: ICurrentWeather[];
+  weatherData: IWeatherResponse[];
   isLoading: boolean;
   city: string;
 }
@@ -20,17 +20,18 @@ const currentWeatherSlice = createSlice({
 
   reducers: {
 
-    loadingStaus(state, { payload }: PayloadAction<boolean>) {
+    loadingStatus(state, {payload}: PayloadAction<boolean>) {
       state.isLoading = payload;
     },
 
     setWeather(state, action) {
       state.weatherData.push(action.payload.data);
-    }
+
+    },
   }
 });
 
-export const {setWeather, loadingStaus} = currentWeatherSlice.actions;
+export const {setWeather, loadingStatus} = currentWeatherSlice.actions;
 
 
 export default currentWeatherSlice.reducer;

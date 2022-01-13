@@ -1,21 +1,21 @@
 import { all, call, put, takeEvery } from 'redux-saga/effects';
-import { loadingStaus, setWeather } from '../reducers/currentWeatherSlice';
+import { loadingStatus, setWeather } from '../reducers/currentWeatherSlice';
 import { ApiService } from '../api/apiService';
-import { ICurrentWeather } from '../type/ICurrentWeather';
+import { IWeatherResponse } from '../type/ICurrentWeather';
 import { AxiosResponse } from 'axios';
 import { asyncRequest } from '../actions';
 
 
 function* sagaWorker(action: ReturnType<typeof asyncRequest>) {
-    yield put(loadingStaus(true))
+    yield put(loadingStatus(true))
   try {
-    const response: AxiosResponse<Array<ICurrentWeather>> = yield call(ApiService.getCurrentWeather, action.payload.city);
+    const response: AxiosResponse<IWeatherResponse> = yield call(ApiService.getCurrentWeather, action.payload.city);
     const data = response.data;
 
     yield put(setWeather({
       data
     }));
-    yield put(loadingStaus(false))
+    yield put(loadingStatus(false))
   } catch (err) {
     console.log(err);
   }

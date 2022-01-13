@@ -1,33 +1,35 @@
 import './App.css';
-import { MainContent } from './components/MainContent/MainContent';
-import { Details } from './components/Details/Details';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './hooks/reduxHooks';
 import { asyncRequest } from './actions';
-
-
+import { Header } from './components/Header/Header';
+import { Main } from './components/Main/Main';
+import { Info } from './components/Info/Info';
+import { Footer } from './components/Footer/Footer';
 
 
 function App() {
 
   const dispath = useAppDispatch();
-  const city = useAppSelector((state) => state.currentWeather.city)
-
-
+  const city = useAppSelector((state) => state.currentWeather.city);
 
 
   useEffect(() => {
-    dispath(asyncRequest({city}))
-  }, [dispath])
+    dispath(asyncRequest({city}));
+  }, [dispath]);
 
 
   return (
-    <div className="App">
-      <div className="widget">
+    <div className="container">
+      <div className="blur">
+        <div className="widget">
 
-        <MainContent/>
-        <Details/>
+          <Header/>
+          <Main/>
+          <Info/>
+          <Footer/>
 
+        </div>
       </div>
     </div>
   );
