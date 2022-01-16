@@ -15,14 +15,3 @@
     font-size: 14px;
     color: rgba(0, 0, 0, 0.746);
 }
-
-
-.title-setup__icon-gear {
-    width: 25px;
-    height: 25px;
-}
-
-.icon-gear__img {
-    width: 100%;
-    height: auto;
-}

@@ -6,22 +6,26 @@ import { Header } from './components/Header/Header';
 import { Main } from './components/Main/Main';
 import { Info } from './components/Info/Info';
 import { Footer } from './components/Footer/Footer';
+import { Modal } from './components/Modal/Modal';
 
 
 function App() {
 
+
+
   const dispath = useAppDispatch();
-  const city = useAppSelector((state) => state.currentWeather.city);
+  const defaultCity = useAppSelector((state) => state.currentWeather.defaultCity);
 
 
   useEffect(() => {
-    dispath(asyncRequest({city}));
-  }, [dispath]);
+    dispath(asyncRequest({defaultCity}));
+  }, [dispath, defaultCity]);
 
 
   return (
     <div className="container">
       <div className="blur">
+        <Modal/>
         <div className="widget">
 
           <Header/>

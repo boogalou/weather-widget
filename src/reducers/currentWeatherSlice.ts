@@ -5,13 +5,15 @@ import { IWeatherResponse } from '../type/ICurrentWeather';
 export interface ICurrentWeatherState {
   weatherData: IWeatherResponse[];
   isLoading: boolean;
-  city: string;
+  defaultCity: string;
+  visibleSettings: boolean;
 }
 
 const initialState: ICurrentWeatherState = {
   weatherData: [],
   isLoading: false,
-  city: 'Ивня',
+  defaultCity: 'Ивня',
+  visibleSettings: false,
 };
 
 const currentWeatherSlice = createSlice({
@@ -25,13 +27,23 @@ const currentWeatherSlice = createSlice({
     },
 
     setWeather(state, action) {
-      state.weatherData.push(action.payload.data);
-
+      return {
+        ...state,
+        weatherData: [action.payload.data]
+      };
     },
+
+    setSettingsVisible(state, {payload}: PayloadAction<boolean>) {
+      state.visibleSettings = payload;
+    },
+
+    setCity(state, {payload}: PayloadAction<string>) {
+      state.defaultCity = payload;
+    }
   }
 });
 
-export const {setWeather, loadingStatus} = currentWeatherSlice.actions;
+export const {setWeather, loadingStatus, setSettingsVisible, setCity} = currentWeatherSlice.actions;
 
 
 export default currentWeatherSlice.reducer;
